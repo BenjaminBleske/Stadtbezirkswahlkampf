@@ -38,44 +38,42 @@ function loadGeoJSON() {
   fetch('editStadtbezirke.geojson')
     .then(response => response.json())
     .then(data => {
-      L.geoJSON(data, {
-        style: function () {
-          return {
-            fillColor: 'blue',
-            weight: 1.5,
-            opacity: 1,
-            color: 'black',
-            fillOpacity: 0
-          };
-        },
-        onEachFeature: function (feature, layer) {
-          const bezirkName = feature.properties.Bezirk || "Bezirk unbekannt";
-          const bezirkNummer = feature.properties.Bezirk_Nr || "Nummer unbekannt";
-          const kandidat = feature.properties.Kandidat || "Nicht angegeben";
-          const alter = feature.properties.Alter !== null ? feature.properties.Alter : "Nicht angegeben";
-          const hauptinteresse = feature.properties.Hauptinteresse || "Nicht angegeben";
-          const beruf = feature.properties.Beruf || "Nicht angegeben";
-          const link = feature.properties.Link || "";
-          const bildUrl = feature.properties.Bild || "";
+   L.geoJSON(data, {
+  style: function () {
+    return {
+      fillColor: 'blue',
+      weight: 1.5,
+      opacity: 1,
+      color: 'black',
+      fillOpacity: 0
+    };
+  },
+  onEachFeature: function(feature, layer) {
+    // Neue Property-Namen aus deinem GeoJSON
+    const bezirkName   = feature.properties.BEZIRK   || 'unbekannt';
+    const verwGeb     = feature.properties.VERW_GEB  || '–';
+    const bezBm       = feature.properties.BEZ_BM    || '–';
+    const telefon     = feature.properties.TELEFON   || '–';
+    const area        = feature.properties['SHAPE.AREA'] || '–';
+    const length      = feature.properties['SHAPE.LEN']  || '–';
 
-          let bezirkInfo = `
-            <h3>${bezirkName} (Nr. ${bezirkNummer})</h3>
-            <ul>
-              <li><strong>Kandidat:</strong> ${kandidat}</li>
-              <li><strong>Alter:</strong> ${alter}</li>
-              <li><strong>Hauptinteresse:</strong> ${hauptinteresse}</li>
-              <li><strong>Beruf:</strong> ${beruf}</li>
-              ${link ? `<li><strong>Link:</strong> <a href="${link}" target="_blank">Weitere Informationen</a></li>` : ""}
-              ${bildUrl ? `<li><img src="${bildUrl}" alt="Bild des Wahlbezirks" width="200" onerror="this.style.display='none';"/></li>` : ""}
-            </ul>
-          `;
+    // HTML zusammenbauen
+    let infoHtml = `
+      <h3>${bezirkName}</h3>
+      <ul>
+        <li><strong>Verw. Gebiet:</strong> ${verwGeb}</li>
+        <li><strong>Bezirk-BM:</strong>   ${bezBm}</li>
+        <li><strong>Telefon:</strong>     ${telefon}</li>
+        <li><strong>Fläche:</strong>      ${area}</li>
+        <li><strong>Umfang:</strong>      ${length}</li>
+      </ul>
+    `;
 
-          // Klick-Event, um die Info-Box zu aktualisieren
-          layer.on('click', function () {
-            addWahlbezirkInfo(bezirkInfo);
-          });
-        }
-      }).addTo(map);
+    layer.on('click', () => {
+      addWahlbezirkInfo(infoHtml);
+    });
+  }
+}).addTo(map);
     })
     .catch(error => {
       console.error('Fehler beim Laden der GeoJSON-Daten:', error);
