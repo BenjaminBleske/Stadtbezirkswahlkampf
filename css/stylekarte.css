@@ -31,8 +31,8 @@ body {
   bottom: 0;
 }
 
-/* Wahlbezirk-Info-Box */
-#wahlbezirk-info {
+/* Stadtbezirk-Info-Box */
+#Stadtbezirk-info {
   position: absolute;
   bottom: 30px;
   left: 10px;
@@ -159,7 +159,7 @@ body {
     width: 120px;
   }
 
-  #wahlbezirk-info {
+  #Stadtbezirk-info {
     font-size: 12px;
     padding: 8px;
   }

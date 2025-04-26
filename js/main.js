@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Funktion zum Laden der GeoJSON-Daten
 // Funktion zum Laden der GeoJSON-Daten aus der lokalen Datei
 function loadGeoJSON() {
-  fetch('editWahlbezirke.geojson')
+  fetch('editStadtbezirke.geojson')
     .then(response => response.json())
     .then(data => {
       L.geoJSON(data, {
