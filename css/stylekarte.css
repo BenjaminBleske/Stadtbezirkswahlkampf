@@ -1,0 +1,176 @@
+/* Grundlegendes Reset */
+*, :after, :before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body, html, #map {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+/* Karte soll den gesamten Viewport einnehmen */
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Wahlbezirk-Info-Box */
+#wahlbezirk-info {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  background: #52b7c1;
+  color: white;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 14px;
+  display: none;
+}
+
+/* Styling für den Standort-Button */
+.locate-button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  background-color: #52b7c1 !important;
+  color: white !important;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.locate-button a:hover {
+  background-color: #3a96a1 !important;
+}
+
+.locate-button i {
+  font-size: 18px;
+}
+
+/* Styling für das Suchcontainer-Control */
+.leaflet-control.search-container-control {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+}
+
+.leaflet-control.search-container-control .search-container {
+  display: flex;
+  align-items: center;
+  background-color: #52b7c1;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.leaflet-control.search-container-control .search-container input {
+  height: 30px;
+  border: none;
+  padding: 0 10px;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.leaflet-control.search-container-control .search-container button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.leaflet-control.search-container-control .search-container button i {
+  font-size: 18px;
+}
+
+/* Hover-Effekt für den Suchbutton im Suchcontainer */
+.leaflet-control.search-container-control .search-container button:hover {
+  color: #f1f1f1;
+}
+
+/* Stil für alle möglichen Button-Elemente in der Karte */
+.leaflet-control-zoom a,
+.leaflet-bar a {
+  background-color: #52b7c1 !important;
+  color: white !important;
+  border: none;
+}
+
+.leaflet-control-zoom a:hover,
+.leaflet-bar a:hover {
+  background-color: #3a96a1 !important;
+}
+
+/* Stil für die Attribution */
+.leaflet-control-attribution {
+  font-size: 12px;
+  color: #555555;
+}
+
+/* Bild unten rechts */
+#bottom-right-logo {
+  position: absolute;
+  bottom: 33px;
+  right: 10px;
+  width: 100px;
+  z-index: 1000;
+}
+
+/* Bild oben rechts */
+#top-right-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 150px;
+  z-index: 1000;
+}
+
+/* Media Queries für Mobilgeräte */
+@media (max-width: 768px) {
+  /* Anpassungen für mobile Geräte */
+  #bottom-right-logo {
+    width: 80px;
+  }
+
+  #top-right-logo {
+    width: 120px;
+  }
+
+  #wahlbezirk-info {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .leaflet-popup {
+    display: none !important;
+  }
+
+  /* Fullscreen-Button ausblenden */
+  .leaflet-control.fullscreen-button {
+    display: none;
+  }
+}
+
