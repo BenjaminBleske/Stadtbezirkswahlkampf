@@ -296,14 +296,14 @@ body {
 
   .sidebar {
     /* z.B. 30 % Breite behalten */
-    width: 40%;
+    width: 50%;
     height: 100vh;       /* volle Höhe */
     position: relative;  /* statisch neben der Karte */
   }
 
   .map-container {
     /* Restbreite für die Karte */
-    width: 60%;
+    width: 50%;
     height: 100vh;
   }
 
