@@ -290,23 +290,26 @@ body {
 /* Media Queries für Mobilgeräte */
 @media (max-width: 768px) {
   .main-container {
-    flex-direction: column;
+    /* weiter Reihe statt Spalte */
+    flex-direction: row;
   }
-  
+
   .sidebar {
-    width: 100%;
-    height: 40%;
-    overflow-y: auto;
+    /* z.B. 30 % Breite behalten */
+    width: 30%;
+    height: 100vh;       /* volle Höhe */
+    position: relative;  /* statisch neben der Karte */
   }
-  
+
   .map-container {
-    height: 60%;
+    /* Restbreite für die Karte */
+    width: 70%;
+    height: 100vh;
   }
-  
-  #Stadtbezirk-info {
-    left: 10px;
-    font-size: 12px;
-    padding: 8px;
+
+  /* Optional: Scrollleisten anpassen */
+  .sidebar {
+    overflow-y: auto;
   }
   
   #bottom-right-logo {
