@@ -9,7 +9,7 @@ html {
   height: 100%;
 }
 
-body, html, #map {
+body, html {
   width: 100%;
   height: 100%;
 }
@@ -20,22 +20,93 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Karte soll den gesamten Viewport einnehmen */
+/* Hauptcontainer für das zweigeteilte Layout */
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Sidebar für Artikel */
+.sidebar {
+  width: 30%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 10;
+}
+
+.sidebar h1 {
+  color: #52b7c1;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.article-list article {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  border-left: 4px solid #52b7c1;
+}
+
+.article-list article h2 {
+  color: #52b7c1;
+  margin-bottom: 5px;
+}
+
+.article-list article small {
+  display: block;
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.article-list article p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.show-on-map-btn {
+  background-color: #52b7c1;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.show-on-map-btn:hover {
+  background-color: #3a96a1;
+}
+
+/* Map Container */
+.map-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
 #map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Stadtbezirk-Info-Box */
 #Stadtbezirk-info {
   position: absolute;
   bottom: 30px;
-  left: 10px;
+  left: calc(30% + 20px);
   background: #52b7c1;
   color: white;
   padding: 10px;
@@ -148,9 +219,96 @@ body {
   z-index: 1000;
 }
 
+/* Styling für Artikel-Marker */
+.article-marker {
+  background: transparent;
+}
+
+.article-marker .marker-inner {
+  background-color: #52b7c1;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.article-marker .marker-inner i {
+  font-size: 16px;
+}
+
+/* Styling für Artikel-Popups */
+.article-popup {
+  padding: 5px;
+  max-width: 300px;
+}
+
+.article-popup h3 {
+  color: #52b7c1;
+  margin-bottom: 5px;
+}
+
+.article-popup small {
+  display: block;
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.article-popup .popup-content {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.article-popup .read-more-btn {
+  background-color: #52b7c1;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  display: block;
+  margin-top: 8px;
+}
+
+.article-popup .read-more-btn:hover {
+  background-color: #3a96a1;
+}
+
+/* Styling für aktiven Artikel */
+.article-list article.active {
+  border-left: 4px solid #3a96a1;
+  background-color: #f0f8f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* Media Queries für Mobilgeräte */
 @media (max-width: 768px) {
-  /* Anpassungen für mobile Geräte */
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: 40%;
+    overflow-y: auto;
+  }
+  
+  .map-container {
+    height: 60%;
+  }
+  
+  #Stadtbezirk-info {
+    left: 10px;
+    font-size: 12px;
+    padding: 8px;
+  }
+  
   #bottom-right-logo {
     width: 80px;
   }
@@ -159,18 +317,8 @@ body {
     width: 120px;
   }
 
-  #Stadtbezirk-info {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .leaflet-popup {
-    display: none !important;
-  }
-
   /* Fullscreen-Button ausblenden */
   .leaflet-control.fullscreen-button {
     display: none;
   }
 }
-

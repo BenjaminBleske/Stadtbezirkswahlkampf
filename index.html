@@ -4,54 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Frank Kien Bürgermeister Bottrop</title>
-
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-
   <!-- Leaflet MarkerCluster CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
-
   <!-- Leaflet-Geocoder CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-
   <!-- Eigenes CSS -->
   <link rel="stylesheet" href="css/stylekarte.css" />
-
   <!-- FontAwesome für Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
 </head>
 <body>
-  <div id="map"></div>
-  <div id="Stadtbezirk-info"></div>
+  <div class="main-container">
+    <div class="sidebar">
+      <h1>Stadtbezirke in Bottrop</h1>
+      <div class="article-list">
+        <article data-title="Bottrop-Kirchhellen" data-coordinates="[51.6016, 6.907482]">
+          <h2>Bottrop-Kirchhellen</h2>
+          <small>Der nördliche Stadtbezirk</small>
+          <p>
+            Bottrop-Kirchhellen ist der nördlichste Stadtbezirk von Bottrop und bekannt für seine ländliche Atmosphäre und grünen Landschaften. Dieser Bezirk bietet eine besondere Lebensqualität mit seiner Mischung aus historischen Bauernhöfen, modernen Wohngebieten und ausgedehnten Naherholungsgebieten.
+              
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  
 
-  <!-- Bild unten rechts -->
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.  
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.  
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          </p>
+          <p>
+            Mit dem Movie Park Germany beheimatet Kirchhellen zudem einen der bekanntesten Freizeitparks Deutschlands, der jährlich tausende Besucher anzieht. Die dörfliche Struktur mit dem historischen Ortskern und der St. Johannes-Kirche prägt das Bild dieses charmanten Stadtteils.
+          </p>
+          <p>
+            Als CDU setzen wir uns besonders für den Erhalt der lokalen Infrastruktur, die Förderung des Einzelhandels und die Bewahrung der grünen Oasen in Kirchhellen ein. Unser Ziel ist es, die Balance zwischen Tradition und moderner Entwicklung zu wahren.
+          </p>
+          <button class="show-on-map-btn" data-title="Bottrop-Kirchhellen">Auf der Karte zeigen</button>
+        </article>
+        <article data-title="Bottrop-Mitte" data-coordinates="[51.537047, 6.920786]">
+          <h2>Bottrop-Mitte</h2>
+          <small>Das Herz der Stadt</small>
+          <p>
+            Bottrop-Mitte bildet das pulsierende Zentrum unserer Stadt. Hier finden Sie die Fußgängerzone mit zahlreichen Einkaufsmöglichkeiten, das historische Rathaus und kulturelle Einrichtungen wie das Quadrat und das Josef Albers Museum.
+          </p>
+          <p>
+            Der Stadtgarten und der Stadtpark Bottrop laden zum Verweilen ein und bieten Erholung mitten in der Stadt. Mit dem Alpincenter befindet sich zudem eine besondere Freizeitattraktion in diesem Bezirk.
+          </p>
+          <p>
+            Als CDU engagieren wir uns für eine lebendige Innenstadt, die Förderung des lokalen Einzelhandels und die Verbesserung der Aufenthaltsqualität für alle Bürgerinnen und Bürger. Wir möchten Bottrop-Mitte als attraktiven Standort zum Leben, Arbeiten und Einkaufen weiterentwickeln.
+          </p>
+          <button class="show-on-map-btn" data-title="Bottrop-Mitte">Auf der Karte zeigen</button>
+        </article>
+        <article data-title="Bottrop-Süd" data-coordinates="[51.517556, 6.957693]">
+          <h2>Bottrop-Süd</h2>
+          <small>Tradition und Wandel</small>
+          <p>
+            Bottrop-Süd ist geprägt von seiner bergbaulichen Vergangenheit und dem erfolgreichen Strukturwandel. Das Wahrzeichen des Bezirks ist das Tetraeder auf der Halde Beckstraße, das einen atemberaubenden Blick über das Ruhrgebiet bietet.
+          </p>
+          <p>
+            Mit dem Innovationszentrum Prosper und zahlreichen Gewerbegebieten ist Bottrop-Süd ein wichtiger Wirtschaftsstandort der Stadt. Gleichzeitig finden sich hier beliebte Wohngebiete und Naherholungsflächen.
+          </p>
+          <p>
+            Die CDU setzt sich dafür ein, die wirtschaftliche Entwicklung in Bottrop-Süd zu fördern und gleichzeitig die Lebensqualität für die Anwohner zu verbessern. Wir unterstützen Projekte zur nachhaltigen Stadtentwicklung und zur Schaffung von Arbeitsplätzen in diesem dynamischen Stadtbezirk.
+              
+            
+          </p>
+          <button class="show-on-map-btn" data-title="Bottrop-Süd">Auf der Karte zeigen</button>
+        </article>
+      </div>
+    </div>
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+  
+  <!-- Logos -->
   <img id="bottom-right-logo" src="logos/cdulogo.png" alt="CDU Logo" />
-
-  <!-- Bild oben rechts -->
   <img id="top-right-logo" src="logos/cdubottrop.png" alt="Bild" />
+  
+  <!-- Stadtbezirk-Info -->
+  <div id="Stadtbezirk-info"></div>
   
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-
   <!-- Leaflet-Geocoder JS -->
   <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
   
-  <!-- Eigenes JavaScript auslagern -->
+  <!-- Eigenes JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
