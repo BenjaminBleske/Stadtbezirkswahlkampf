@@ -312,7 +312,9 @@ body {
     overflow-y: auto;
   }
   
- 
+  #bottom-right-logo {
+    display: none;
+  }
 
   #top-right-logo {
     width: 120px;
